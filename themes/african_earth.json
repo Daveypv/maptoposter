@@ -1,0 +1,15 @@
+{
+  "name": "African Earth",
+  "description": "Warm Savannah tones inspired by sunbaked earth, acacia bark, and African sunsets",
+  "bg": "#F5EFE6",
+  "text": "#3A2E25",
+  "gradient_color": "#EADAF2",
+  "water": "#C9B89A",
+  "parks": "#D8C9A3",
+  "road_motorway": "#A3471E",
+  "road_primary": "#6B3E26",
+  "road_secondary": "#8C5A3C",
+  "road_tertiary": "#B79AC9",
+  "road_residential": "#D2A679",
+  "road_default": "#9C6A43"
+}

@@ -254,19 +254,25 @@ def create_poster(city, country, point, dist, output_file):
     create_gradient_fade(ax, THEME['gradient_color'], location='top', zorder=10)
 
     FONTS = get_fonts_for_text(city)
-    
+
+    FONT_MAIN_SIZE = 60
+    if len(city) > 12:
+      FONT_MAIN_SIZE = 50
+
     # 4. Typography using Roboto font
     if FONTS:
-        font_main = FontProperties(fname=FONTS['bold'], size=60)
+        font_main = FontProperties(fname=FONTS['bold'], size=FONT_MAIN_SIZE)
         font_top = FontProperties(fname=FONTS['bold'], size=40)
         font_sub = FontProperties(fname=FONTS['light'], size=22)
         font_coords = FontProperties(fname=FONTS['regular'], size=14)
+        font_attr = FontProperties(fname=FONTS['light'], size=8)
     else:
         # Fallback to system fonts
-        font_main = FontProperties(family='monospace', weight='bold', size=60)
+        font_main = FontProperties(family='monospace', weight='bold', size=FONT_MAIN_SIZE)
         font_top = FontProperties(family='monospace', weight='bold', size=40)
         font_sub = FontProperties(family='monospace', weight='normal', size=22)
         font_coords = FontProperties(family='monospace', size=14)
+        font_attr = FontProperties(family='monospace', size=8)
     
     spaced_city = "  ".join(list(city.upper()))
 
@@ -287,12 +293,6 @@ def create_poster(city, country, point, dist, output_file):
     
     ax.plot([0.4, 0.6], [0.125, 0.125], transform=ax.transAxes, 
             color=THEME['text'], linewidth=1, zorder=11)
-
-    # --- ATTRIBUTION (bottom right) ---
-    if FONTS:
-        font_attr = FontProperties(fname=FONTS['light'], size=8)
-    else:
-        font_attr = FontProperties(family='monospace', size=8)
     
     ax.text(0.98, 0.02, "© OpenStreetMap contributors", transform=ax.transAxes,
             color=THEME['text'], alpha=0.5, ha='right', va='bottom', 

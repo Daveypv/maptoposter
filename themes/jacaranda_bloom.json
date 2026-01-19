@@ -1,0 +1,15 @@
+{
+  "name": "Jacaranda Bloom",
+  "description": "Soft purple jacaranda blossoms with warm earth tones and spring sunlight",
+  "bg": "#F6F1F7",
+  "text": "#3A2D4F",
+  "gradient_color": "#E6D8EE",
+  "water": "#C9C3D6",
+  "parks": "#C7D2B2",
+  "road_motorway": "#6B3E6F",
+  "road_primary": "#4E3558",
+  "road_secondary": "#7A5A88",
+  "road_tertiary": "#9A82A8",
+  "road_residential": "#C4B2D1",
+  "road_default": "#8B739A"
+}

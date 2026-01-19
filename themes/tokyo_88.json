@@ -1,0 +1,15 @@
+{
+  "name": "Tokyo Neon '88",
+  "description": "Ultra-vibrant 1980s Tokyo neon lights — cyberpunk glow, rain-soaked streets, electric nights",
+  "bg": "#0A0014",
+  "text": "#F8F8FF",
+  "gradient_color": "#1B0036",
+  "water": "#00E5FF",
+  "parks": "#39FF14",
+  "road_motorway": "#FF005D",
+  "road_primary": "#FF9F00",
+  "road_secondary": "#00C2FF",
+  "road_tertiary": "#B026FF",
+  "road_residential": "#FF4FD8",
+  "road_default": "#5D00FF"
+}

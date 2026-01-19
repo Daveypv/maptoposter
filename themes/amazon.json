@@ -1,0 +1,15 @@
+{
+  "name": "Amazon Jungle",
+  "description": "Dense rainforest tones inspired by emerald canopies, deep rivers, wet soil, and bioluminescent life",
+  "bg": "#0E1F16",
+  "text": "#E6F2EA",
+  "gradient_color": "#173828",
+  "water": "#1DB9A0",
+  "parks": "#2F7F5F",
+  "road_motorway": "#E0A106",
+  "road_primary": "#C47A18",
+  "road_secondary": "#8E5E2A",
+  "road_tertiary": "#5E6B3B",
+  "road_residential": "#4A5F3A",
+  "road_default": "#6E7F45"
+}
