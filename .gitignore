@@ -1,3 +1,5 @@
 cache/*
 env/
 .env/
+.idea/
+ox_env/
