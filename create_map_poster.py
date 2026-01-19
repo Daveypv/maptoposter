@@ -10,31 +10,11 @@ import json
 import os
 from datetime import datetime
 import argparse
+from font_manager import get_fonts_for_text
 
 THEMES_DIR = "themes"
 FONTS_DIR = "fonts"
 POSTERS_DIR = "posters"
-
-def load_fonts():
-    """
-    Load Roboto fonts from the fonts directory.
-    Returns dict with font paths for different weights.
-    """
-    fonts = {
-        'bold': os.path.join(FONTS_DIR, 'Roboto-Bold.ttf'),
-        'regular': os.path.join(FONTS_DIR, 'Roboto-Regular.ttf'),
-        'light': os.path.join(FONTS_DIR, 'Roboto-Light.ttf')
-    }
-    
-    # Verify fonts exist
-    for weight, path in fonts.items():
-        if not os.path.exists(path):
-            print(f"⚠ Font not found: {path}")
-            return None
-    
-    return fonts
-
-FONTS = load_fonts()
 
 def generate_output_filename(city, theme_name):
     """
@@ -272,6 +252,8 @@ def create_poster(city, country, point, dist, output_file):
     # Layer 3: Gradients (Top and Bottom)
     create_gradient_fade(ax, THEME['gradient_color'], location='bottom', zorder=10)
     create_gradient_fade(ax, THEME['gradient_color'], location='top', zorder=10)
+
+    FONTS = get_fonts_for_text(city)
     
     # 4. Typography using Roboto font
     if FONTS:

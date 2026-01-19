@@ -3,3 +3,5 @@ env/
 .env/
 .idea/
 ox_env/
+posters
+__pycache__/
