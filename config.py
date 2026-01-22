@@ -25,3 +25,7 @@ FONT_FAMILIES = {
         "light": "NotoSansDevanagari-Light.ttf",
     },
 }
+
+THEMES_DIR = "themes"
+FONTS_DIR = "fonts"
+POSTERS_DIR = "posters"

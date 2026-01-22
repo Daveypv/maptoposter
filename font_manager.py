@@ -1,8 +1,8 @@
-from config import FONT_FAMILIES
+from config import FONT_FAMILIES, FONTS_DIR
 from fontTools.ttLib import TTFont
 import os
 
-FONTS_DIR = "fonts"
+# FONTS_DIR = "fonts"
 # FONTS_DIR = os.path.join(BASE_DIR, "assets", "fonts")
 
 def detect_script(text: str) -> str:
@@ -29,7 +29,6 @@ def detect_script(text: str) -> str:
             return "cyrillic"
 
     return "latin"
-
 
 def load_fonts_for_script(script: str) -> dict:
     if script not in FONT_FAMILIES:

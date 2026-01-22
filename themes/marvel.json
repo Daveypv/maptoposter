@@ -1,0 +1,15 @@
+{
+  "name": "Marvel Neon Heroes",
+  "description": "High-energy Marvel comic palette — bold primaries, glowing tech blues, heroic reds, and cosmic highlights",
+  "bg": "#05070F",
+  "text": "#FFFFFF",
+  "gradient_color": "#121A3A",
+  "water": "#00D9FF",
+  "parks": "#00FF6A",
+  "road_motorway": "#FF1E1E",
+  "road_primary": "#FFB000",
+  "road_secondary": "#1E90FF",
+  "road_tertiary": "#B400FF",
+  "road_residential": "#FF4FD8",
+  "road_default": "#00E5FF"
+}

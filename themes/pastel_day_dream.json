@@ -1,0 +1,15 @@
+{
+  "name": "Soft Pastel Daydream",
+  "description": "Gentle pastel palette inspired by morning light, soft skies, and muted spring colors",
+  "bg": "#F8FAFC",
+  "text": "#4A5568",
+  "gradient_color": "#EEF2F7",
+  "water": "#CDE7F0",
+  "parks": "#D8EBD3",
+  "road_motorway": "#F4B6C2",
+  "road_primary": "#F6C1A3",
+  "road_secondary": "#E6D6FA",
+  "road_tertiary": "#C9E4DE",
+  "road_residential": "#EADBC8",
+  "road_default": "#D1D5DB"
+}

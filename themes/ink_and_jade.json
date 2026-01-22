@@ -1,0 +1,15 @@
+{
+  "name": "Chinese Ink & Jade",
+  "description": "Traditional Chinese palette inspired by ink wash paintings, jade stone, cinnabar red, and rice paper",
+  "bg": "#F4F7F2",
+  "text": "#EDE7DC",
+  "gradient_color": "#F2E4D8",
+  "parks": "#5F8F7E",
+  "water": "#9FBEB4",
+  "road_motorway": "#8B1E1E",
+  "road_primary": "#8E1B1B",
+  "road_secondary": "#8C6A4A",
+  "road_tertiary": "#A89C8A",
+  "road_residential": "#C9B8A3",
+  "road_default": "#9B8F7A"
+}
