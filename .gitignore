@@ -1,3 +1,6 @@
 cache/*
 env/
 .env/
+ox_env
+.idea
+__pycache__/
