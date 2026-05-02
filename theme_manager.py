@@ -51,7 +51,7 @@ def load_theme(theme_name="feature_based"):
         return theme
 
 
-## Random Color Generators
+# Random Color Generators
 # Neon characteristics
 def random_neon_color():
     hue = random.random()                   # Hue: 0–1

@@ -14,6 +14,7 @@ from font_manager import get_fonts_for_text
 from theme_manager import get_available_themes, load_theme
 from example_manager import print_examples
 from config import FONT_FAMILIES, FONTS_DIR, THEMES_DIR, POSTERS_DIR
+# from create_poster_method import create_poster # Started removing, but everything is intertwined
 
 
 def generate_output_filename(city, theme_name):
@@ -342,13 +343,14 @@ Examples:
         coords = get_coordinates(args.city, args.country)
         output_file = generate_output_filename(args.city, args.theme)
         create_poster(args.city, args.country, coords, args.distance, output_file)
+#         create_poster(args.city, args.country, coords, args.distance, output_file, THEME) # Modified to use create_poster_method
 
         print("\n" + "=" * 50)
         print("✓ Poster generation complete!")
         print("=" * 50)
 
-    except Exception as e:
-        print(f"\n✗ Error: {e}")
+    except Exception as error:
+        print(f"\n✗ Error: {error}")
         import traceback
         traceback.print_exc()
         os.sys.exit(1)

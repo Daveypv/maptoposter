@@ -1,0 +1,15 @@
+{
+  "name": "Wenzhou River & Forge",
+  "description": "Coastal industrial palette inspired by the Oujiang River, port infrastructure, historic temples, and forested mountains",
+  "bg": "#EEF2F3",
+  "text": "#2A2F33",
+  "gradient_color": "#DDE6EA",
+  "water": "#6FAFC2",
+  "parks": "#5F8F6A",
+  "road_motorway": "#9E3B2F",
+  "road_primary": "#4F5B66",
+  "road_secondary": "#6F7F6A",
+  "road_tertiary": "#9FB1BC",
+  "road_residential": "#C5D0D6",
+  "road_default": "#8C9AA3"
+}
