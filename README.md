@@ -32,6 +32,14 @@ pip install -r requirements.txt
 python create_map_poster.py --city <city> --country <country> [options]
 ```
 
+For a face poster from a local image:
+
+```bash
+./ox_env/bin/python create_map_poster.py --face-image images/a.png --theme noir --face-title "A" --face-subtitle "Portrait"
+```
+
+Face posters use a contour-map style: the theme background stays visible, and the face is drawn with fine contour lines, stronger accent outlines, and small map-point dots.
+
 ### Options
 
 | Option | Short | Description | Default |
@@ -40,6 +48,9 @@ python create_map_poster.py --city <city> --country <country> [options]
 | `--country` | `-C` | Country name | required |
 | `--theme` | `-t` | Theme name | feature_based |
 | `--distance` | `-d` | Map radius in meters | 29000 |
+| `--face-image` | | Local image path for a face poster | |
+| `--face-title` | | Main title for a face poster | Portrait |
+| `--face-subtitle` | | Subtitle for a face poster | Portrait |
 | `--list-themes` | | List all available themes | |
 
 ### Examples
@@ -74,6 +85,11 @@ python create_map_poster.py -c "Budapest" -C "Hungary" -t copper_patina -d 8000 
 
 # List available themes
 python create_map_poster.py --list-themes
+
+# Face posters
+python create_map_poster.py --face-image images/a.png -t noir --face-title "A" --face-subtitle "Portrait"
+python create_map_poster.py --face-image images/a.png -t neon-cyberpunk --face-title "DaveKen" --face-subtitle "Portrait"
+python create_map_poster.py --face-image images/a.png -t sunset --face-title "David" --face-subtitle "Portrait"
 ```
 
 ### Distance Guide
@@ -141,7 +157,11 @@ Create a JSON file in `themes/` directory:
 
 ```
 map_poster/
-├── create_map_poster.py          # Main script
+├── create_map_poster.py  # Command-line entry point
+├── helpers.md            # Beginner guide to the classes
+├── maptoposter/          # Reusable Python classes
+├── tests/                # Unit tests for reusable classes
+├── images/               # Local source images for face posters
 ├── themes/               # Theme JSON files
 ├── fonts/                # Roboto font files
 ├── posters/              # Generated posters
@@ -169,14 +189,19 @@ Quick reference for contributors who want to extend or modify the script.
 
 ### Key Functions
 
-| Function | Purpose | Modify when... |
-|----------|---------|----------------|
-| `get_coordinates()` | City → lat/lon via Nominatim | Switching geocoding provider |
-| `create_poster()` | Main rendering pipeline | Adding new map layers |
-| `get_edge_colors_by_type()` | Road color by OSM highway tag | Changing road styling |
-| `get_edge_widths_by_type()` | Road width by importance | Adjusting line weights |
-| `create_gradient_fade()` | Top/bottom fade effect | Modifying gradient overlay |
-| `load_theme()` | JSON theme → dict | Adding new theme properties |
+| Class / Method | Purpose | Modify when... |
+|----------------|---------|----------------|
+| `GeocodingService.get_coordinates()` | City → lat/lon via Nominatim | Switching geocoding provider |
+| `MapDataFetcher.fetch()` | Download roads, water, and parks | Adding new OpenStreetMap data sources |
+| `MapPosterRenderer.create_poster()` | Main rendering pipeline | Adding new map layers |
+| `FacePosterRenderer.create_poster()` | Face image rendering pipeline | Changing the portrait poster design |
+| `FaceImageLoader.load()` | Loads a local image from disk | Adding URL image loading later |
+| `RoadStyler.get_edge_colors()` | Road color by OSM highway tag | Changing road styling |
+| `RoadStyler.get_edge_widths()` | Road width by importance | Adjusting line weights |
+| `GradientPainter.create_gradient_fade()` | Top/bottom fade effect | Modifying gradient overlay |
+| `ThemeManager.load_theme()` | JSON theme → dict | Adding new theme properties |
+
+For a beginner-friendly explanation of every class and method, read `helpers.md`.
 
 ### Rendering Layers (z-order)
 
@@ -192,7 +217,7 @@ z=0   Background color
 ### OSM Highway Types → Road Hierarchy
 
 ```python
-# In get_edge_colors_by_type() and get_edge_widths_by_type()
+# In RoadStyler.color_for_highway() and RoadStyler.width_for_highway()
 motorway, motorway_link     → Thickest (1.2), darkest
 trunk, primary              → Thick (1.0)
 secondary                   → Medium (0.8)
